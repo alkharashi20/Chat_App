@@ -1,7 +1,9 @@
+import 'package:chat_app/Presentation/Pages/auth/login.dart';
 import 'package:chat_app/routes/routes.dart';
 import 'package:flutter/material.dart';
 
-import '../Presentation/Pages/register/register.dart';
+import '../Presentation/Pages/auth/register.dart';
+
 
 
 
@@ -9,7 +11,7 @@ class RouteGenerator {
   static Route<dynamic>? getRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.login:{
-
+return MaterialPageRoute(builder: (_) => const Login());
       }
       case Routes.register:
         return MaterialPageRoute(builder: (_) =>  RegisterScreen());

@@ -2,9 +2,9 @@ import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 enum states {success , failure , loading, initial}
-class RegisterStates extends Equatable{
+class AuthStates extends Equatable{
   states state;
-  RegisterStates({required this.state});
+  AuthStates({required this.state});
 
   @override
   // TODO: implement props
