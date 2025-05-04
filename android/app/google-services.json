@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "502090485540",
+    "project_id": "gangksdaweq2",
+    "storage_bucket": "gangksdaweq2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502090485540:android:5cf3de8b351392942dadb1",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB32GLAOPsyihaobwxPvBZjsjDhcWy-Uds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

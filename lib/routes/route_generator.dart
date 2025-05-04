@@ -1,7 +1,7 @@
 import 'package:chat_app/routes/routes.dart';
 import 'package:flutter/material.dart';
 
-import '../register.dart';
+import '../Presentation/Pages/register/register.dart';
 
 
 
@@ -12,7 +12,7 @@ class RouteGenerator {
 
       }
       case Routes.register:
-        return MaterialPageRoute(builder: (_) => const RegisterScreen());
+        return MaterialPageRoute(builder: (_) =>  RegisterScreen());
       default:
         return _undefinedRoute();
     }
