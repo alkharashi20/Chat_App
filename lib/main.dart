@@ -1,4 +1,3 @@
-import 'package:chat_app/Presentation/Pages/register/register.dart';
 import 'package:chat_app/routes/route_generator.dart';
 import 'package:chat_app/routes/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateRoute: RouteGenerator.getRoute,
-  initialRoute:Routes.register ,
+  initialRoute:Routes.login ,
     );
 
   }}

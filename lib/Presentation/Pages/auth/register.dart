@@ -1,11 +1,14 @@
-import 'package:chat_app/Presentation/Pages/register/register_states.dart';
-import 'package:chat_app/Presentation/Pages/register/register_view_model.dart';
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../routes/routes.dart';
 import '../../../utils/validator_manager.dart';
 import '../../../utils/widgets/CusttomTextFormField.dart';
+import 'auth_states.dart';
+import 'auth_view_model.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
@@ -13,16 +16,18 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => RegisterViewModel(),
-      child: BlocBuilder<RegisterViewModel, RegisterStates>(
+      create: (context) => AuthViewModel(),
+      child: BlocBuilder<AuthViewModel, AuthStates>(
         builder: (context, state) {
-          final reg = context.read<RegisterViewModel>();
+          final reg = context.read<AuthViewModel>();
 
           if (state.state == states.loading) {
             return const Center(child: CircularProgressIndicator());
           } else if (state.state == states.success) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
               showdialog(context, message: 'Success');
+              Navigator.pushNamed(context,Routes.login);
+
             });
           } else if (state.state == states.failure) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
