@@ -1,15 +1,20 @@
+import 'dart:io';
+
 import 'package:chat_app/routes/routes.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../utils/validator_manager.dart';
 import '../../../utils/widgets/CusttomTextFormField.dart';
 import 'auth_states.dart';
 import 'auth_view_model.dart';
-
+import 'dart:io';
 class Login extends StatelessWidget {
-  const Login({super.key});
-
+   Login({super.key});
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -27,7 +32,6 @@ class Login extends StatelessWidget {
         child: BlocBuilder<AuthViewModel, AuthStates>(
           builder: (context, state) {
             final reg = context.read<AuthViewModel>();
-
             return Scaffold(
               body: Stack(
                 children: [
@@ -37,6 +41,7 @@ class Login extends StatelessWidget {
                     fit: BoxFit.cover,
                     width: double.infinity,
                   ),
+
                   if (state.state == states.loading)
                     const Center(child: CircularProgressIndicator()),
                   if (state.state != states.loading)
@@ -72,12 +77,15 @@ class Login extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 20),
+
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,
                             ),
-                            onPressed: () {
+                            onPressed: () async{
+
                               reg.login();
+
                             },
                             child: const Text(
                               'Login',
