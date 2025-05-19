@@ -1,7 +1,9 @@
+import 'package:chat_app/data/database/database_utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../data/model/MyUser.dart';
 import 'auth_states.dart';
 
 class AuthViewModel extends Cubit<AuthStates> {
@@ -18,6 +20,8 @@ void reg()async{
     try{
       final credit=await    FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
 emit(AuthStates(state: states.success));
+var user = MyUser(id: credit.user?.uid??"", email: email, user: userName, fristName: fristName, lastName: lastName);
+databaseutils.RegisterUser(user);
     }on FirebaseAuthException catch(e){
       if(e.code=='email-already-in-use'){
         print('email already in use');

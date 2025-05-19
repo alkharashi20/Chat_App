@@ -65,6 +65,7 @@ class RegisterScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       CusttomTextFormField(
+
                         label: 'User Name',
                         hint: 'Enter your username',
                         onChanged: (value) => reg.userName = value,
@@ -79,6 +80,7 @@ class RegisterScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       CusttomTextFormField(
+                        obscureText: true,
                         label: 'Password',
                         hint: 'Enter your Password',
                         onChanged: (value) => reg.password = value,
