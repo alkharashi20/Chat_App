@@ -59,6 +59,7 @@ class Login extends StatelessWidget {
                           ),
                           const SizedBox(height: 5),
                           CusttomTextFormField(
+                            obscureText: true,
                             label: 'Password',
                             hint: 'Enter your Password',
                             onChanged: (value) => reg.password = value,
